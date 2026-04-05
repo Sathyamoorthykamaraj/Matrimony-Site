@@ -1,0 +1,268 @@
+:host {
+    display: block;
+    height: 100%;
+    --app-blue: #3498db;
+    --app-blue-dark: #2f8ed2;
+    --orange: #f5a000;
+    --white: #ffffff;
+    --text-dark: #222222;
+    --text-gray: #4b4b4b;
+}
+
+html,
+body,
+ion-app,
+app-root,
+ion-router-outlet,
+.searchswipe-page,
+ion-content.searchswipe-content,
+.searchswipe-content::part(scroll) {
+    background: #33a2db !important;
+}
+
+.matches-toolbar {
+    --background: transparent;
+    --color: #ffffff;
+    --min-height: 58px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+ion-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    padding-inline: 0;
+    margin-left: 2px;
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-btn {
+    --color: #ffffff !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.menu-btn ion-icon {
+    font-size: 22px;
+    color: #ffffff !important;
+}
+
+
+.screen-wrapper {
+    min-height: 100%;
+    padding: 8px 12px 20px;
+    background: transparent;
+}
+
+
+.pending-row {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 100%;
+}
+
+.pending-left {
+    display: flex;
+    align-items: center;
+}
+
+.pending-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pending-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    display: block;
+}
+
+.main-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    display: block;
+}
+
+.new-badge {
+    --background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+    min-width: 52px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 95px;
+}
+
+.match-swiper {
+    width: 100%;
+    display: block;
+    overflow: visible;
+    padding-bottom: 6px;
+}
+
+swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: auto;
+}
+
+.profile-card {
+    width: 100%;
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.profile-image {
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+    display: block;
+    background: #f1f1f1;
+}
+
+.profile-content {
+    padding: 16px;
+}
+
+.profile-name {
+    display: block;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.profile-detail {
+    display: block;
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.32;
+    margin-bottom: 2px;
+}
+
+.action-row {
+    margin-top: 14px;
+    gap: 4px;
+}
+
+.yes-btn {
+    --background: var(--orange);
+    --background-hover: #e59600;
+    --border-radius: 999px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --box-shadow: none;
+    font-weight: 600;
+    min-height: 34px;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.no-btn {
+    --color: #8f8f8f;
+    --border-color: #cfcfcf;
+    --border-radius: 999px;
+    --padding-start: 18px;
+    --padding-end: 18px;
+    --box-shadow: none;
+    font-weight: 500;
+    min-height: 34px;
+    font-size: 14px;
+    text-transform: none;
+}
+
+@media (max-width: 576px) {
+    .screen-wrapper {
+        padding-top: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    ion-title {
+        font-size: 18px;
+    }
+
+    .pending-title {
+        font-size: 17px;
+    }
+
+    .profile-image {
+        height: 205px;
+        object-fit: cover;
+    }
+
+    .profile-name {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 768px) {
+    .screen-wrapper {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .profile-image {
+        height: 230px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 992px) {
+    .screen-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-top: 18px;
+    }
+
+    ion-title {
+        font-size: 26px;
+    }
+
+    .pending-title {
+        font-size: 22px;
+    }
+
+    .profile-image {
+        height: 280px;
+        object-fit: contain;
+        background: #f4f4f4;
+    }
+
+    .profile-name {
+        font-size: 20px;
+    }
+
+    .profile-detail {
+        font-size: 15px;
+    }
+}

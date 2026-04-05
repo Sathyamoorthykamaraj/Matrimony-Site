@@ -1,0 +1,249 @@
+:host {
+    display: block;
+    height: 100%;
+    --app-blue: #3498db;
+    --app-blue-dark: #2f8ed2;
+    --white: #ffffff;
+    --text-dark: #1f1f1f;
+    --text-gray: #555555;
+    --dot-blue: #1f6dff;
+}
+
+html,
+body,
+ion-app,
+app-root,
+ion-router-outlet,
+.viewprofile-page,
+ion-content.viewprofile-content,
+.viewprofile-content::part(scroll) {
+    background: #ffffff !important;
+}
+
+.viewprofile-wrapper {
+    min-height: 100%;
+    padding: 0;
+    background: transparent;
+}
+
+.hero-card {
+    position: relative;
+    margin: 5px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    background: transparent;
+}
+
+.hero-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    background: #e8e8e8;
+}
+
+.top-overlay {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 10px;
+}
+
+.overlay-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.overlay-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 320px;
+}
+
+.back-btn {
+    --color: #ffffff;
+    margin: 0;
+    min-width: 36px;
+    min-height: 36px;
+}
+
+.back-arrow {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.matri-id {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.count-chip {
+    --background: rgba(0, 0, 0, 0.75);
+    --color: #ffffff;
+    border-radius: 9px;
+    padding-inline: 8px;
+    min-height: 28px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.dots-overlay {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    gap: 8px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: inline-block;
+    opacity: 0.9;
+}
+
+.active-dot {
+    background: var(--dot-blue);
+}
+
+.details-card {
+    margin: 0;
+    border-radius: 24px 24px 0 0;
+    margin-top: -18px;
+    position: relative;
+    z-index: 11;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.details-content {
+    padding: 22px 18px 26px;
+}
+
+.profile-name {
+    display: block;
+    color: var(--text-dark);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.detail-line {
+    display: block;
+    color: var(--text-gray);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.extra-info-row {
+    margin-top: 18px;
+}
+
+.info-item {
+    --background: #f7f8fb;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    --padding-start: 14px;
+    --inner-padding-end: 14px;
+    --min-height: 74px;
+}
+
+.info-title {
+    display: block;
+    font-size: 13px;
+    color: #777777;
+}
+
+.info-value {
+    display: block;
+    font-size: 15px;
+    color: #1f1f1f;
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        height: 390px;
+    }
+
+    .profile-name {
+        font-size: 22px;
+    }
+
+    .detail-line {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    .viewprofile-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        height: 520px;
+    }
+
+    .details-content {
+        padding: 28px 26px 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .viewprofile-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        height: 600px;
+        object-fit: inherit;
+        background: #f0f0f0;
+    }
+
+    .top-overlay {
+        padding: 0 18px;
+        top: 16px;
+    }
+
+    .matri-id {
+        font-size: 18px;
+    }
+
+    .count-chip {
+        font-size: 14px;
+    }
+
+    .details-content {
+        padding: 30px 32px 36px;
+    }
+
+    .profile-name {
+        font-size: 28px;
+    }
+
+    .detail-line {
+        font-size: 16px;
+    }
+
+    .overlay-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        top: 530px;
+    }
+}

@@ -1,0 +1,99 @@
+<ion-content fullscreen class="viewprofile-page viewprofile-content" *ngIf="profile">
+  <ion-grid class="viewprofile-wrapper">
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="hero-card">
+
+          <ion-row class="top-overlay ion-align-items-center ion-justify-content-between">
+            <ion-col size="7" class="overlay-left">
+              <ion-button fill="clear" class="back-btn" (click)="goBack()">
+                <ion-text class="back-arrow">←</ion-text>
+              </ion-button>
+
+              <ion-text class="matri-id">{{ matrimonyId }}</ion-text>
+            </ion-col>
+
+            <ion-col size="5" class="overlay-right">
+              <ion-chip class="count-chip">
+                <ion-label>{{ currentImageIndex }}/{{ totalImages }}</ion-label>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+
+          <ion-img [src]="profile.image" class="hero-image" (ionError)="onImageError($event)"></ion-img>
+
+          <ion-row class="dots-overlay ion-justify-content-center ion-align-items-center">
+            <ion-col size="auto" *ngFor="let dot of imageDots">
+              <ion-text class="dot" [class.active-dot]="dot === currentImageIndex"></ion-text>
+            </ion-col>
+          </ion-row>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="details-card">
+          <ion-card-content class="details-content">
+
+            <ion-text class="profile-name">{{ profile.name }}</ion-text>
+
+            <ion-text class="detail-line">
+              {{ profile.age }} Yrs, {{ profile.height }}, {{ profile.community }}, {{ profile.subCommunity }}
+            </ion-text>
+
+            <ion-text class="detail-line">
+              {{ profile.profession }}
+            </ion-text>
+
+            <ion-text class="detail-line">
+              {{ profile.location }}
+            </ion-text>
+
+            <ion-row class="extra-info-row">
+              <ion-col size="6" sizeMd="4">
+                <ion-item lines="none" class="info-item">
+                  <ion-label>
+                    <ion-text class="info-title">Education</ion-text>
+                    <ion-text class="info-value">MBBS</ion-text>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" sizeMd="4">
+                <ion-item lines="none" class="info-item">
+                  <ion-label>
+                    <ion-text class="info-title">Profession</ion-text>
+                    <ion-text class="info-value">{{ profile.profession }}</ion-text>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" sizeMd="4">
+                <ion-item lines="none" class="info-item">
+                  <ion-label>
+                    <ion-text class="info-title">Community</ion-text>
+                    <ion-text class="info-value">{{ profile.community }} - {{ profile.subCommunity }}</ion-text>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" sizeMd="4">
+                <ion-item lines="none" class="info-item">
+                  <ion-label>
+                    <ion-text class="info-title">Location</ion-text>
+                    <ion-text class="info-value">{{ profile.location }}</ion-text>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-content [fullscreen]="true" class="swipe-page">
+  <div class="page-shell">
+    <div class="top-section"></div>
+
+    <div class="bottom-section"></div>
+
+    <div class="page-content">
+      <div class="header-row">
+        <button type="button" class="back-btn" (click)="goBack()" aria-label="Go back">
+          <span class="back-arrow">←</span>
+        </button>
+
+        <div class="header-title">Daily Recommendations</div>
+      </div>
+
+      <div class="card-stack" *ngIf="currentProfile; else noProfiles">
+        <div class="bg-card bg-card-back"></div>
+        <div class="bg-card bg-card-front"></div>
+
+        <div class="profile-card" #swipeCard>
+          <div class="image-wrap">
+            <img [src]="currentProfile.image" [alt]="currentProfile.name"
+              (error)="onImageError($event, currentProfile.id)" />
+          </div>
+
+          <div class="profile-content">
+            <div class="badges">
+              <div class="badge verified-badge">
+                <span class="badge-icon">☑</span>
+                <span>Verified</span>
+              </div>
+
+              <div class="badge premium-badge">
+                <span class="badge-icon">◉</span>
+                <span>Premium NRI</span>
+              </div>
+            </div>
+
+            <h2>{{ currentProfile.name }}</h2>
+
+            <p class="details">
+              {{ currentProfile.age }} Yrs, {{ currentProfile.height }},
+              {{ currentProfile.profession }}, {{ currentProfile.community }},
+              {{ currentProfile.subCommunity }}, {{ currentProfile.location }}
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="action-row">
+              <button type="button" class="shortlist-btn" (click)="onButtonAction('Shortlisted')">
+                <span class="shortlist-icon">☆</span>
+                <span>Shortlist</span>
+              </button>
+
+              <div class="like-text">Like her?</div>
+
+              <div class="decision-btns">
+                <button type="button" class="circle-btn reject" (click)="onButtonAction('Not Interested')">
+                  <span class="action-icon">✕</span>
+                </button>
+
+                <button type="button" class="circle-btn accept" (click)="onButtonAction('Interested')">
+                  <span class="action-icon accept-icon">✓</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noProfiles>
+        <div class="empty-state">
+          <div class="empty-icon">☺</div>
+          <h3>No more profiles</h3>
+          <p>You have reached the end of the swipe list.</p>
+          <ion-button (click)="goBack()">Back to Matches</ion-button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-page class="searchswipe-page">
+  <ion-content fullscreen class="searchswipe-content">
+    <ion-grid class="screen-wrapper">
+
+      <ion-row class="header-row ion-align-items-center ion-justify-content-between">
+        <ion-col size="10" class="header-left">
+          <ion-text class="main-title">My Matches</ion-text>
+        </ion-col>
+
+        <ion-col size="2" class="header-right">
+          <ion-button fill="clear" class="menu-btn" (click)="goToSwipeScreen()">
+            <ion-text class="menu-dots">⋮</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="pending-row ion-align-items-center ion-justify-content-between">
+        <ion-col size="9" class="pending-left">
+          <ion-text class="pending-title">
+            {{ totalPending }} Profiles pending with me
+          </ion-text>
+        </ion-col>
+
+        <ion-col size="3" class="pending-right">
+          <ion-badge class="new-badge">
+            {{ newCount }} NEW
+          </ion-badge>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <swiper-container class="match-swiper" [attr.slides-per-view]="1.58" [attr.space-between]="14"
+            [attr.grab-cursor]="true" [attr.pagination]="false" [attr.free-mode]="false" [attr.breakpoints]="'{
+              &quot;640&quot;: { &quot;slidesPerView&quot;: 2.15, &quot;spaceBetween&quot;: 18 },
+              &quot;992&quot;: { &quot;slidesPerView&quot;: 3.2, &quot;spaceBetween&quot;: 20 },
+              &quot;1200&quot;: { &quot;slidesPerView&quot;: 4, &quot;spaceBetween&quot;: 22 }
+            }'">
+            <swiper-slide *ngFor="let profile of profiles; trackBy: trackByProfile">
+              <ion-card class="profile-card">
+                <ion-img [src]="profile.image" class="profile-image" (click)="openProfile(profile.id)"
+                  (ionError)="onImageError($event, profile.id)"></ion-img>
+
+                <ion-card-content class="profile-content">
+                  <ion-text class="profile-name">
+                    {{ profile.name }}
+                  </ion-text>
+
+                  <ion-text class="profile-detail">
+                    {{ profile.age }} Yrs, {{ profile.height }}, {{ profile.community }}, {{ profile.subCommunity }},
+                  </ion-text>
+
+                  <ion-text class="profile-detail">
+                    {{ profile.profession }},
+                  </ion-text>
+
+                  <ion-text class="profile-detail">
+                    {{ profile.location }}
+                  </ion-text>
+
+                  <ion-row class="action-row ion-align-items-center">
+                    <ion-col size="auto">
+                      <ion-button shape="round" class="yes-btn" (click)="onDecision(profile, 'Yes')">
+                        Yes
+                      </ion-button>
+                    </ion-col>
+
+                    <ion-col size="auto">
+                      <ion-button shape="round" fill="outline" class="no-btn" (click)="onDecision(profile, 'No')">
+                        No
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-content>
+</ion-page>
